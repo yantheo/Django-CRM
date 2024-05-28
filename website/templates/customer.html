@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Customer Data:</h1>
+<ul>
+  {{customer.first_name}} {{customer.last_name}}
+  {{customer.email}}
+  {{customer.phone}}
+  {{customer.adresse}}
+  {{customer.city}}
+  {{customer.zipcode}}
+  {{customer.state}}
+  {{customer.created_at}}
+</ul>
+{% endblock %}

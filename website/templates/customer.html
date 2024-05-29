@@ -1,15 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Customer Data:</h1>
-<ul>
-  {{customer.first_name}} {{customer.last_name}}
-  {{customer.email}}
-  {{customer.phone}}
-  {{customer.adresse}}
-  {{customer.city}}
-  {{customer.zipcode}}
-  {{customer.state}}
-  {{customer.created_at}}
-</ul>
+<div class="card">
+  <div class="card-header">
+    {{customer.first_name}} {{customer.last_name}}
+  </div>
+  <div class="card-body">
+    <p class="card-title"><strong>Email: </strong>{{customer.email}}</p>
+    <p class="card-title"><strong>Phone: </strong>{{customer.phone}}</p>
+    <p class="card-title"><strong>Adresse: </strong>{{customer.adresse}}</p>
+    <p class="card-title"><strong>City: </strong>{{customer.city}}</p>
+    <p class="card-title"><strong>State: </strong>{{customer.state}}</p>
+    <p class="card-title"><strong>Zipcode: </strong>{{customer.zipcode}}</p>
+    <p class="card-title"><strong>Created at: </strong>{{customer.created_at}}</p>
+    <p class="card-title"><strong>ID: </strong>{{customer.id}}</p>
+
+  </div>
+</div>
+<br><br>
+<a class="btn btn-secondary" href="{% url 'homepage' %}">Back</a>
+<a class="btn btn-danger" href="{% url 'delete_customer' customer.id %}">Delete</a>
+<a class="btn btn-primary" href="{% url 'update_customer' customer.id %}">Update</a>
 {% endblock %}
